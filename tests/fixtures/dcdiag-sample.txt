@@ -1,0 +1,41 @@
+
+Directory Server Diagnosis
+
+Performing initial setup:
+   Trying to find home server...
+   Home Server = DC01
+   * Identified AD Forest.
+   Done gathering initial info.
+
+Doing initial required tests
+
+   Testing server: Default-First-Site-Name\DC01
+      Starting test: Connectivity
+         ......................... DC01 passed test Connectivity
+
+Doing primary tests
+
+   Testing server: Default-First-Site-Name\DC01
+      Starting test: Advertising
+         ......................... DC01 passed test Advertising
+      Starting test: FrsEvent
+         ......................... DC01 passed test FrsEvent
+      Starting test: DFSREvent
+         There are warning or error events within the last 24 hours after the
+         SYSVOL has been shared.  Failing SYSVOL replication problems may cause
+         Group Policy problems.
+         ......................... DC01 failed test DFSREvent
+      Starting test: Replications
+         ......................... DC01 passed test Replications
+      Starting test: Services
+         ......................... DC01 passed test Services
+
+   Running partition tests on : DomainDnsZones
+      Starting test: CheckSDRefDom
+         ......................... DomainDnsZones passed test CheckSDRefDom
+
+   Running enterprise tests on : corp.example.com
+      Starting test: LocatorCheck
+         ......................... corp.example.com passed test LocatorCheck
+      Starting test: Intersite
+         ......................... corp.example.com passed test Intersite

@@ -1,0 +1,14 @@
+Replication Summary Start Time: 2026-10-24 09:00:00
+
+Beginning data collection for replication summary, this may take awhile:
+  ......
+
+
+Source DSA          largest delta    fails/total %%   error
+ DC01                      12m:04s    0 /  10    0
+ DC02                  01h:02m:10s    2 /  10   20  (1722) The RPC server is unavailable.
+ DC03                     >60 days    5 /   5  100  (8524) The DSA operation is unable to proceed because of a DNS lookup failure.
+
+Destination DSA     largest delta    fails/total %%   error
+ DC01                  01h:02m:10s    2 /  10   20  (1722) The RPC server is unavailable.
+ DC02                      12m:04s    0 /  10    0

@@ -1,0 +1,7 @@
+Schema master               DC01.corp.example.com
+Domain naming master        DC01.corp.example.com
+PDC                         DC01.corp.example.com
+RID pool manager            DC02.corp.example.com
+Infrastructure master       DC02.corp.example.com
+The command completed successfully.
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>AD &amp; Windows Server Health Check (SAMPLE OUTPUT)</title>
+<style>body{font-family:Segoe UI,Arial,sans-serif;margin:24px;color:#222}h1{font-size:22px}table{border-collapse:collapse;width:100%;margin-bottom:20px}th,td{border:1px solid #ddd;padding:6px 8px;font-size:13px;text-align:left}th{background:#f3f3f3}.badge{color:#fff;padding:2px 8px;border-radius:3px;font-weight:600}.meta{color:#666;font-size:13px}</style></head><body>
+<h1>AD &amp; Windows Server Health Check (SAMPLE OUTPUT)</h1>
+<p class="meta">Server: DC01 (fictional sample) &middot; Generated: 2026-10-24 09:00</p>
+<p>Overall: <span class="badge" style="background:#c82333">Critical</span> &nbsp; 17 OK, 2 warning, 4 critical</p>
+<h2>dcdiag</h2><table><tr><th>Check</th><th>Status</th><th>Detail</th></tr>
+<tr><td>Connectivity (DC01)</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>Passed</td></tr>
+<tr><td>Advertising (DC01)</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>Passed</td></tr>
+<tr><td>FrsEvent (DC01)</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>Passed</td></tr>
+<tr><td>DFSREvent (DC01)</td><td><span class="badge" style="background:#c82333">Critical</span></td><td>Failed</td></tr>
+<tr><td>Replications (DC01)</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>Passed</td></tr>
+<tr><td>Services (DC01)</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>Passed</td></tr>
+<tr><td>CheckSDRefDom (DomainDnsZones)</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>Passed</td></tr>
+<tr><td>LocatorCheck (corp.example.com)</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>Passed</td></tr>
+<tr><td>Intersite (corp.example.com)</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>Passed</td></tr>
+</table>
+<h2>Disk</h2><table><tr><th>Check</th><th>Status</th><th>Detail</th></tr>
+<tr><td>C:</td><td><span class="badge" style="background:#b8860b">Warning</span></td><td>14.2 GB free of 80 GB (17.8%)</td></tr>
+</table>
+<h2>FSMO</h2><table><tr><th>Check</th><th>Status</th><th>Detail</th></tr>
+<tr><td>Schema master</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>DC01.corp.example.com</td></tr>
+<tr><td>Domain naming master</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>DC01.corp.example.com</td></tr>
+<tr><td>PDC</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>DC01.corp.example.com</td></tr>
+<tr><td>RID pool manager</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>DC02.corp.example.com</td></tr>
+<tr><td>Infrastructure master</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>DC02.corp.example.com</td></tr>
+</table>
+<h2>Replication</h2><table><tr><th>Check</th><th>Status</th><th>Detail</th></tr>
+<tr><td>Source: DC01</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>Largest delta 12m:04s, 0/10 failed</td></tr>
+<tr><td>Source: DC02</td><td><span class="badge" style="background:#c82333">Critical</span></td><td>Largest delta 01h:02m:10s, 2/10 failed (1722) The RPC server is unavailable.</td></tr>
+<tr><td>Source: DC03</td><td><span class="badge" style="background:#c82333">Critical</span></td><td>Largest delta &gt;60 days, 5/5 failed (8524) The DSA operation is unable to proceed because of a DNS lookup failure.</td></tr>
+<tr><td>Destination: DC01</td><td><span class="badge" style="background:#c82333">Critical</span></td><td>Largest delta 01h:02m:10s, 2/10 failed (1722) The RPC server is unavailable.</td></tr>
+<tr><td>Destination: DC02</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>Largest delta 12m:04s, 0/10 failed</td></tr>
+</table>
+<h2>Services</h2><table><tr><th>Check</th><th>Status</th><th>Detail</th></tr>
+<tr><td>NTDS</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>Running</td></tr>
+<tr><td>DFSR</td><td><span class="badge" style="background:#1e7e34">OK</span></td><td>Running</td></tr>
+</table>
+<h2>System</h2><table><tr><th>Check</th><th>Status</th><th>Detail</th></tr>
+<tr><td>Pending reboot</td><td><span class="badge" style="background:#b8860b">Warning</span></td><td>Windows Update</td></tr>
+</table>
+</body></html>
+

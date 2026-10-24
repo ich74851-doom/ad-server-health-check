@@ -82,7 +82,7 @@ function ConvertFrom-RepadminReplSummary {
                     Direction        = $direction
                     DomainController = $row.Dc
                     LargestDelta = $row.Delta
-                    DeltaMinutes = ConvertTo-DeltaMinutes -Delta $row.Delta
+                    DeltaMinutes = ConvertTo-DeltaMinute -Delta $row.Delta
                     Fails        = [int]$row.Fails
                     Total        = [int]$row.Total
                     FailPercent  = [int]$row.Pct
@@ -94,7 +94,7 @@ function ConvertFrom-RepadminReplSummary {
     }
 }
 
-function ConvertTo-DeltaMinutes {
+function ConvertTo-DeltaMinute {
     <#
     .SYNOPSIS
         Converts a repadmin "largest delta" value (e.g. 01h:02m, 12m:04s, 3d.04h:01m, >60 days) to minutes.
@@ -242,6 +242,7 @@ function New-HealthCheckResult {
     .SYNOPSIS
         Creates a check result object in the shape used by the report.
     #>
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSUseShouldProcessForStateChangingFunctions', '', Justification = 'Creates an in-memory object only; changes no system state.')]
     [CmdletBinding()]
     [OutputType([pscustomobject])]
     param(
@@ -348,6 +349,6 @@ function ConvertTo-HealthCheckHtml {
 
 #endregion
 
-Export-ModuleMember -Function ConvertFrom-DcDiagOutput, ConvertFrom-RepadminReplSummary, ConvertTo-DeltaMinutes,
+Export-ModuleMember -Function ConvertFrom-DcDiagOutput, ConvertFrom-RepadminReplSummary, ConvertTo-DeltaMinute,
 ConvertFrom-NetdomFsmoOutput, Get-PendingRebootState, Get-DiskStatus, Get-HealthSummary, New-HealthCheckResult,
 Test-PendingReboot, Get-ServiceCheck, ConvertTo-HealthCheckHtml
